@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/halaman_menu.dart';
+import 'package:flutter_application_2/pages/halaman_menu.dart';
+import 'package:flutter_application_2/pages/halaman_profile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -69,7 +70,17 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const MenuPage()),
                 );
               },
-              child: Text("pindah halaman"),
+              child: Text("Menuju Home Page"),
+            ),
+            SizedBox(height: 25),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfilPage()),
+                );
+              },
+              child: Text("Menuju Profil Page"),
             ),
           ],
         ),
