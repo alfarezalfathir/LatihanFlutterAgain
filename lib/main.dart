@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/halaman_home.dart';
 import 'package:flutter_application_2/halaman_menu.dart';
 
 void main() {

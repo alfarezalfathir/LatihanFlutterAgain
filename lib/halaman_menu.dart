@@ -1,5 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/halaman_asuransi.dart';
+import 'package:flutter_application_2/halaman_belanja_online.dart';
+import 'package:flutter_application_2/halaman_donasi.dart';
 import 'package:flutter_application_2/halaman_home.dart';
+import 'package:flutter_application_2/halaman_investasi.dart';
+import 'package:flutter_application_2/halaman_lainnya.dart';
+import 'package:flutter_application_2/halaman_listrik.dart';
+import 'package:flutter_application_2/halaman_pulsa_data.dart';
+import 'package:flutter_application_2/halaman_riwayat.dart';
+import 'package:flutter_application_2/halaman_scan.dart';
+import 'package:flutter_application_2/halaman_streaming.dart';
+import 'package:flutter_application_2/halaman_tagihan_air.dart';
+import 'package:flutter_application_2/halaman_topup.dart';
+import 'package:flutter_application_2/halaman_transfer.dart';
+import 'package:flutter_application_2/halaman_transportasi.dart';
+import 'package:flutter_application_2/halaman_tv_kabel.dart';
+import 'package:flutter_application_2/halaman_voucher_game.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -14,364 +30,567 @@ class MenuPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Column(
             children: [
+              // Baris pertama
               Row(
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TopUpPage(),
                           ),
-                          child: Icon(Icons.add, size: 40, color: Colors.white),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Top Up", style: TextStyle(fontSize: 14)),
-                      ],
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.add,
+                              size: 40,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text("Top Up", style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TransferPage(),
                           ),
-                          child: Icon(
-                            Icons.send,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.send,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Transfer", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Transfer",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ScanPage(),
                           ),
-                          child: Icon(
-                            Icons.qr_code,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.qr_code,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Scan QR", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text("Scan QR", style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RiwayatPage(),
                           ),
-                          child: Icon(
-                            Icons.history,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.history,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Riwayat", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text("Riwayat", style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
 
-              SizedBox(height: 20),
-              Row(
-                // baris kedua
+              const SizedBox(height: 20),
 
+              // Baris kedua
+              Row(
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PulsaDataPage(),
                           ),
-                          child: Icon(
-                            Icons.phone_android,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.phone_android,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Pulsa & data", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Pulsa & data",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const VoucherGamePage(),
                           ),
-                          child: Icon(
-                            Icons.sports_esports,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.sports_esports,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Voucher Game", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Voucher Game",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TransportasiPage(),
                           ),
-                          child: Icon(
-                            Icons.directions_bus_filled,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.directions_bus_filled,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Transportasi", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Transportasi",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TagihanAirPage(),
                           ),
-                          child: Icon(
-                            Icons.water_drop,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.water_drop,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Tagihan Air", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Tagihan Air",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
+
+              // Baris ketiga
               Row(
-                // baris ketiga
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ListrikPage(),
                           ),
-                          child: Icon(
-                            Icons.bolt,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.bolt,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Listrik", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text("Listrik", style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TvKabelPage(),
                           ),
-                          child: Icon(Icons.tv, size: 40, color: Colors.white),
-                        ),
-                        SizedBox(height: 6),
-                        Text("TV kabel", style: TextStyle(fontSize: 14)),
-                      ],
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.tv,
+                              size: 40,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text(
+                            "TV kabel",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const StreamingPage(),
                           ),
-                          child: Icon(
-                            Icons.ondemand_video_rounded,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.ondemand_video_rounded,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Streaming", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Streaming",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const BelanjaOnlinePage(),
                           ),
-                          child: Icon(
-                            Icons.shopping_bag,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.shopping_bag,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Belanja Online", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Belanja Online",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
+
+              // Baris keempat
               Row(
-                // baris keempat
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DonasiPage(),
                           ),
-                          child: Icon(
-                            Icons.volunteer_activism,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.volunteer_activism,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Donasi", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text("Donasi", style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AsuransiPage(),
                           ),
-                          child: Icon(
-                            Icons.health_and_safety,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.health_and_safety,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Asuransi", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Asuransi",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const InvestasiPage(),
                           ),
-                          child: Icon(
-                            Icons.trending_up,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.trending_up,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Investasi", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Investasi",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 65,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(18),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LainnyaPage(),
                           ),
-                          child: Icon(
-                            Icons.more_horiz,
-                            size: 40,
-                            color: Colors.white,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.more_horiz,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6),
-                        Text("Lainnya", style: TextStyle(fontSize: 14)),
-                      ],
+                          const SizedBox(height: 6),
+                          const Text("Lainnya", style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+
+              const SizedBox(height: 20),
+
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -379,7 +598,7 @@ class MenuPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const HomePage()),
                   );
                 },
-                child: Text("kembali"),
+                child: const Text("kembali"),
               ),
             ],
           ),
