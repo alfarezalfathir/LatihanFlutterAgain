@@ -1,42 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/halaman_home.dart';
-import 'package:flutter_application_2/pages/halaman_menu.dart';
-import 'package:flutter_application_2/pages/halaman_profile.dart';
 
-class NavbarPage extends StatefulWidget {
-  const NavbarPage({super.key});
+class Navbar extends StatelessWidget {
+  final int selectedIndex;
+  final ValueChanged<int> onTap;
 
-  @override
-  State<NavbarPage> createState() => _NavbarPageState();
-}
-
-class _NavbarPageState extends State<NavbarPage> {
-  int currentIndex = 0;
-
-  final List<Widget> pages = const [
-    HomePage(),
-    ProfilPage(),
-    MenuPage(),
-  ]; //Yang diganti di daerah sini, Home itu brarti dindex 0
+  const Navbar({super.key, required this.selectedIndex, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('NavigationBar')),
-      body: pages[currentIndex],
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: currentIndex,
-        onDestinationSelected: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-          NavigationDestination(icon: Icon(Icons.menu), label: 'Menu'),
-        ],
-      ),
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      currentIndex: selectedIndex,
+      onTap: onTap,
+      selectedItemColor: Colors.blue,
+      unselectedItemColor: Colors.grey,
+      items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Detail'),
+        BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+      ],
     );
+
+    
   }
 }

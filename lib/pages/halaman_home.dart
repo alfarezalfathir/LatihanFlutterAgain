@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/pages/halaman_menu.dart';
-import 'package:flutter_application_2/pages/halaman_profile.dart';
+
+import 'halaman_profile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,80 +9,51 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Text("aplikasi flutter pertama"),
+        title: const Text("Home"),
         backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
       ),
       body: Center(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(20),
-              margin: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Row(
-                children: [
-                  Icon(Icons.add_circle, size: 40, color: Colors.blue),
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("tambahkan akun", style: TextStyle(fontSize: 20)),
-                        Text("tambahkan akun"),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.school, size: 100, color: Colors.blue),
+
+                const SizedBox(height: 24),
+
+                const Text(
+                  "Aplikasi Profil Mahasiswa",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                ),
+
+                const SizedBox(height: 12),
+
+                const Text(
+                  "Belajar Navigasi di Flutter",
+                  style: TextStyle(fontSize: 16),
+                ),
+
+                const SizedBox(height: 32),
+
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ProfilPage(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.arrow_forward),
+                  label: const Text("Buka Profile"),
+                ),
+              ],
             ),
-            Container(
-              padding: const EdgeInsets.all(20),
-              margin: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Row(
-                children: [
-                  Icon(Icons.book, size: 40, color: Colors.blue),
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("tambahkan buku", style: TextStyle(fontSize: 20)),
-                        Text("tambahkan buku"),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 50),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MenuPage()),
-                );
-              },
-              child: Text("Menuju Home Page"),
-            ),
-            SizedBox(height: 25),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ProfilPage()),
-                );
-              },
-              child: Text("Menuju Profil Page"),
-            ),
-          ],
+          ),
         ),
       ),
     );
