@@ -6,6 +6,7 @@ import 'package:flutter_application_2/pages/halaman_home.dart';
 import 'package:flutter_application_2/pages/halaman_investasi.dart';
 import 'package:flutter_application_2/pages/halaman_lainnya.dart';
 import 'package:flutter_application_2/pages/halaman_listrik.dart';
+import 'package:flutter_application_2/pages/halaman_maps.dart';
 import 'package:flutter_application_2/pages/halaman_pulsa_data.dart';
 import 'package:flutter_application_2/pages/halaman_riwayat.dart';
 import 'package:flutter_application_2/pages/halaman_scan.dart';
@@ -582,6 +583,44 @@ class MenuPage extends StatelessWidget {
                           ),
                           const SizedBox(height: 6),
                           const Text("Lainnya", style: TextStyle(fontSize: 14)),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 5),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MapsPage(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.map,
+                              size: 40,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text("Maps", style: TextStyle(fontSize: 14)),
                         ],
                       ),
                     ),

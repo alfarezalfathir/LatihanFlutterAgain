@@ -22,6 +22,6 @@ class Navbar extends StatelessWidget {
       ],
     );
 
-    
+
   }
 }
